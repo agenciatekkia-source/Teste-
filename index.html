@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sua bio atrai ou afasta cliente? | Viver de Vendas Diretas</title>
+<meta name="description" content="Responda 10 perguntas rápidas, descubra a nota da sua bio do Instagram e receba 3 modelos prontos para reescrever a sua bio hoje.">
+<meta name="theme-color" content="#5B2A4E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* Paleta da marca */
+  :root {
+    --ameixa: #5B2A4E;
+    --ameixa-escura: #451F3B;
+    --rosa: #E9B7C4;
+    --rosa-claro: #F7E3E9;
+    --creme: #FFF8F3;
+    --dourado: #B98A2E;
+    --tinta: #2E2230;
+    --tinta-suave: #5E4F5F;
+    --branco: #FFFFFF;
+    --erro: #A3242F;
+    --sombra: 0 6px 24px rgba(91, 42, 78, 0.12);
+    --raio: 18px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--creme);
+    color: var(--tinta);
+    overflow-x: hidden;
+  }
+
+  .vvd {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--tinta);
+    background: var(--creme);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .vvd h1, .vvd h2, .vvd h3 {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    color: var(--ameixa);
+    line-height: 1.2;
+    margin: 0 0 14px;
+  }
+  .vvd h1 { font-size: clamp(30px, 8vw, 42px); }
+  .vvd h2 { font-size: clamp(24px, 6.4vw, 32px); }
+  .vvd h3 { font-size: 21px; }
+  .vvd p { margin: 0 0 14px; }
+  .vvd [tabindex="-1"]:focus { outline: none; }
+
+  /* Topo com marca e progresso */
+  .topo {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--creme);
+    border-bottom: 1px solid rgba(185, 138, 46, 0.35);
+    padding: 12px 16px 10px;
+  }
+  .topo-interno { max-width: 560px; margin: 0 auto; }
+  .marca {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    color: var(--ameixa);
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    text-align: center;
+  }
+  .marca::before, .marca::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background: var(--dourado);
+    vertical-align: middle;
+    margin: 0 8px;
+  }
+  .progresso { margin-top: 10px; }
+  .progresso[hidden] { display: none; }
+  .progresso-texto {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tinta-suave);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .progresso-trilho {
+    height: 8px;
+    border-radius: 99px;
+    background: var(--rosa-claro);
+    overflow: hidden;
+  }
+  .progresso-barra {
+    height: 100%;
+    width: 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--ameixa), var(--dourado));
+    transition: width 0.35s ease;
+  }
+
+  /* Telas */
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+  }
+  .tela[hidden] { display: none; }
+  .tela.entrando { animation: entrar 0.35s ease both; }
+  @keyframes entrar {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .cartao {
+    background: var(--branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: 26px 20px;
+  }
+  @media (min-width: 480px) { .cartao { padding: 32px 28px; } }
+
+  .selo {
+    display: inline-block;
+    background: var(--rosa-claro);
+    color: var(--ameixa);
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 99px;
+    padding: 6px 14px;
+    margin-bottom: 14px;
+  }
+  .texto-menor { font-size: 15px; color: var(--tinta-suave); }
+
+  .enfeite {
+    width: 56px;
+    height: 3px;
+    background: var(--dourado);
+    border-radius: 3px;
+    margin: 0 0 18px;
+  }
+
+  /* Botões */
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-principal {
+    background: var(--ameixa);
+    color: var(--branco);
+    box-shadow: 0 6px 18px rgba(91, 42, 78, 0.28);
+  }
+  .btn-principal:hover { background: var(--ameixa-escura); }
+  .btn-principal[disabled] { opacity: 0.7; cursor: wait; }
+  .btn-claro {
+    background: var(--branco);
+    color: var(--ameixa);
+    border-color: var(--ameixa);
+  }
+  .btn-claro:hover { background: var(--rosa-claro); }
+  .btn-dourado {
+    background: var(--creme);
+    color: var(--ameixa);
+    border-color: var(--dourado);
+  }
+  .btn-dourado:hover { background: #FBEFD9; }
+  .btn-texto {
+    background: none;
+    border: none;
+    color: var(--ameixa);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    min-height: 48px;
+    width: auto;
+    padding: 10px 6px;
+  }
+
+  .vvd :focus-visible {
+    outline: 3px solid var(--ameixa);
+    outline-offset: 3px;
+  }
+  .btn-principal:focus-visible { outline-color: var(--dourado); box-shadow: 0 0 0 3px var(--branco), 0 0 0 6px var(--ameixa); outline: none; }
+
+  /* Pergunta */
+  .pergunta-numero {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--tinta-suave);
+    margin-bottom: 8px;
+  }
+  .respostas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .btn-resposta {
+    min-height: 64px;
+    font-size: 19px;
+    background: var(--creme);
+    color: var(--ameixa);
+    border-color: var(--rosa);
+  }
+  .btn-resposta:hover { background: var(--rosa-claro); }
+  .btn-resposta[aria-pressed="true"] {
+    background: var(--ameixa);
+    color: var(--branco);
+    border-color: var(--ameixa);
+  }
+  .acoes-pergunta { margin-top: 14px; display: flex; justify-content: flex-start; }
+
+  /* Formulário */
+  .nota-previa {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--rosa-claro);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+  .nota-previa-num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ameixa);
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .nota-previa-info { font-size: 15px; line-height: 1.35; }
+  .nota-previa-info strong { display: block; color: var(--ameixa); font-size: 18px; margin-bottom: 2px; }
+
+  .campo { margin-bottom: 16px; }
+  .campo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+  .campo input[type="text"], .campo input[type="tel"], .campo input[type="email"] {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 17px;
+    color: var(--tinta);
+    background: var(--branco);
+    border: 2px solid #CDBBC8;
+    border-radius: 12px;
+    transition: border-color 0.2s ease;
+  }
+  .campo input:focus { border-color: var(--ameixa); }
+  .campo input[aria-invalid="true"] { border-color: var(--erro); }
+  .erro {
+    color: var(--erro);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .erro:empty { display: none; }
+
+  .consentimento {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 8px 0 6px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .consentimento input {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    accent-color: var(--ameixa);
+    cursor: pointer;
+  }
+  .consentimento label { cursor: pointer; }
+  .privacidade { font-size: 14px; margin: 4px 0 18px 36px; }
+  .vvd a { color: var(--ameixa); text-underline-offset: 3px; }
+  .vvd a.btn { text-decoration: none; }
+
+  /* Resultado */
+  .nota-grande {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    width: 148px;
+    height: 148px;
+    margin: 4px auto 18px;
+    border-radius: 50%;
+    background: var(--creme);
+    border: 4px solid var(--dourado);
+    padding-top: 40px;
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--ameixa);
+  }
+  .nota-grande .num { font-size: 60px; font-weight: 700; line-height: 1; }
+  .nota-grande .de { font-size: 20px; font-weight: 600; }
+  .resultado-topo { text-align: center; }
+  .saudacao { font-weight: 600; color: var(--tinta-suave); margin-bottom: 6px; }
+
+  .secao { margin-top: 26px; }
+  .lista-dicas { list-style: none; padding: 0; margin: 0; }
+  .lista-dicas li {
+    background: var(--creme);
+    border-left: 4px solid var(--rosa);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .dica-pergunta {
+    display: block;
+    font-weight: 700;
+    color: var(--ameixa);
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .dica-texto { margin: 0; font-size: 16px; }
+  .parabens {
+    background: var(--rosa-claro);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .oferta {
+    margin-top: 28px;
+    background: var(--ameixa);
+    color: var(--branco);
+    border-radius: var(--raio);
+    padding: 26px 20px;
+    box-shadow: var(--sombra);
+  }
+  .oferta h2 { color: var(--branco); }
+  .oferta .enfeite { background: var(--rosa); }
+  .oferta .btn { background: var(--rosa); color: var(--ameixa-escura); }
+  .oferta .btn:hover { background: #F2CCD7; }
+  .oferta .btn:focus-visible { outline: 3px solid var(--branco); outline-offset: 3px; box-shadow: none; }
+
+  .oferta-secundaria {
+    margin-top: 18px;
+    border: 1px dashed var(--dourado);
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: var(--tinta-suave);
+  }
+  .oferta-secundaria p { margin: 0; }
+
+  .rodape {
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(185, 138, 46, 0.35);
+    font-size: 13px;
+    color: var(--tinta-suave);
+    text-align: center;
+  }
+  .rodape strong { color: var(--ameixa); display: block; margin-bottom: 4px; font-size: 14px; }
+
+  .apenas-leitor {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .vvd *, .vvd *::before, .vvd *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="vvd" id="vvd-quiz">
+
+  <header class="topo">
+    <div class="topo-interno">
+      <div class="marca" id="marca">Viver de Vendas Diretas</div>
+      <div class="progresso" id="progresso" hidden>
+        <div class="progresso-texto" id="progresso-texto" aria-hidden="true">Pergunta 1 de 10</div>
+        <div class="progresso-trilho" role="progressbar" id="progresso-trilho"
+             aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1"
+             aria-valuetext="Pergunta 1 de 10">
+          <div class="progresso-barra" id="progresso-barra"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Avisos para leitores de tela -->
+    <div class="apenas-leitor" aria-live="polite" id="aviso"></div>
+
+    <!-- 1. Tela inicial -->
+    <section class="tela" id="tela-inicio" aria-labelledby="titulo-inicio">
+      <div class="cartao">
+        <span class="selo">Quiz da bio · 2 minutos</span>
+        <h1 id="titulo-inicio" tabindex="-1">Sua bio atrai ou afasta cliente?</h1>
+        <div class="enfeite" aria-hidden="true"></div>
+        <p>Em 2 minutos você descobre sua nota de 0 a 10 e recebe 3 modelos prontos para reescrever a sua bio hoje.</p>
+        <p class="texto-menor">Abra o seu Instagram em outra aba, olhe a sua bio e responda com sinceridade, guria. Aqui ninguém te julga.</p>
+        <button type="button" class="btn btn-principal" id="btn-comecar" aria-label="Começar o quiz">Começar</button>
+      </div>
+    </section>
+
+    <!-- 2. Perguntas (conteúdo preenchido pelo script) -->
+    <section class="tela" id="tela-pergunta" aria-labelledby="pergunta-texto" hidden>
+      <div class="cartao">
+        <div class="pergunta-numero" id="pergunta-numero">Pergunta 1</div>
+        <h2 id="pergunta-texto" tabindex="-1"></h2>
+        <div class="respostas" role="group" aria-labelledby="pergunta-texto">
+          <button type="button" class="btn btn-resposta" id="btn-sim" aria-pressed="false">Sim</button>
+          <button type="button" class="btn btn-resposta" id="btn-nao" aria-pressed="false">Não</button>
+        </div>
+        <div class="acoes-pergunta">
+          <button type="button" class="btn btn-texto" id="btn-voltar" aria-label="Voltar para a pergunta anterior">← Voltar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Captura -->
+    <section class="tela" id="tela-captura" aria-labelledby="titulo-captura" hidden>
+      <div class="cartao">
+        <div class="nota-previa">
+          <div class="nota-previa-num" aria-hidden="true">✓</div>
+          <div class="nota-previa-info">
+            <strong id="nota-previa">Sua nota: 0 de 10</strong>
+            Seu diagnóstico está pronto, com as dicas para cada ponto que você marcou.
+          </div>
+        </div>
+        <h2 id="titulo-captura" tabindex="-1">Sua nota está pronta! 🎉</h2>
+        <p>Para liberar o diagnóstico completo e o PDF com 3 modelos de bio, me diga onde enviar.</p>
+
+        <form id="form-captura" novalidate>
+          <div class="campo">
+            <label for="campo-nome">Nome</label>
+            <input type="text" id="campo-nome" name="nome" autocomplete="given-name"
+                   required aria-required="true" aria-describedby="erro-nome" maxlength="80">
+            <div class="erro" id="erro-nome" role="alert"></div>
+          </div>
+
+          <div class="campo">
+            <label for="campo-whatsapp">WhatsApp com DDD</label>
+            <input type="tel" id="campo-whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel-national"
+                   placeholder="(11) 91234-5678" required aria-required="true" aria-describedby="erro-whatsapp" maxlength="16">
+            <div class="erro" id="erro-whatsapp" role="alert"></div>
+          </div>
+
+          <div class="campo">
+            <label for="campo-email">E-mail</label>
+            <input type="email" id="campo-email" name="email" autocomplete="email" inputmode="email"
+                   placeholder="voce@email.com" required aria-required="true" aria-describedby="erro-email" maxlength="120">
+            <div class="erro" id="erro-email" role="alert"></div>
+          </div>
+
+          <div class="consentimento">
+            <input type="checkbox" id="campo-consentimento" name="consentimento"
+                   required aria-required="true" aria-describedby="erro-consentimento">
+            <label for="campo-consentimento">Aceito receber conteúdos e ofertas da Bruna por WhatsApp e e-mail. Posso sair quando quiser.</label>
+          </div>
+          <div class="erro" id="erro-consentimento" role="alert" style="margin-left:36px"></div>
+          <p class="privacidade"><a id="link-privacidade" href="#" target="_blank" rel="noopener">Ler a política de privacidade</a></p>
+
+          <button type="submit" class="btn btn-principal" id="btn-enviar" aria-label="Ver meu diagnóstico">Ver meu diagnóstico</button>
+        </form>
+        <div class="acoes-pergunta">
+          <button type="button" class="btn btn-texto" id="btn-voltar-captura" aria-label="Voltar para a pergunta 10">← Voltar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Resultado -->
+    <section class="tela" id="tela-resultado" aria-labelledby="faixa-titulo" hidden>
+      <div class="cartao">
+        <div class="resultado-topo">
+          <p class="saudacao" id="saudacao"></p>
+          <div class="nota-grande" role="img" id="nota-grande" aria-label="Sua nota: 0 de 10">
+            <span class="num" id="nota-num">0</span><span class="de">/10</span>
+          </div>
+          <h2 id="faixa-titulo" tabindex="-1"></h2>
+          <p id="faixa-mensagem"></p>
+        </div>
+
+        <div class="secao">
+          <h3>O que ajustar primeiro</h3>
+          <ol class="lista-dicas" id="lista-dicas"></ol>
+          <div class="parabens" id="parabens" hidden>
+            <p><strong>Você marcou Sim nas 10 perguntas!</strong></p>
+            <p style="margin:0">Que orgulho de ver isso. A sua bio já cumpre todos os pontos do diagnóstico. Agora é manter o conteúdo alinhado com o que ela mostra.</p>
+          </div>
+        </div>
+
+        <div class="secao">
+          <a class="btn btn-dourado" id="link-pdf" href="#" target="_blank" rel="noopener"
+             aria-label="Baixar os 3 modelos de bio em PDF (abre em nova aba)">Baixar os 3 modelos de bio</a>
+        </div>
+      </div>
+
+      <div class="oferta">
+        <h2>E depois da bio, o que vem?</h2>
+        <div class="enfeite" aria-hidden="true"></div>
+        <p>Ter a bio certa é o começo. O Apareça e Venda leva você do travamento até o primeiro vídeo publicado, em 7 missões, com uma Assistente de IA te guiando todos os dias. 7 dias de garantia.</p>
+        <a class="btn" id="link-vendas" href="#" aria-label="Conheço o Apareça e Venda: ver a página do curso">Conheço o Apareça e Venda</a>
+      </div>
+
+      <div class="oferta-secundaria">
+        <p>Prefere que a Bruna analise o seu perfil e grave um vídeo com o plano? <a id="link-analise" href="#">Conheça a Análise Completa</a>. As vagas são limitadas por semana.</p>
+      </div>
+
+      <footer class="rodape">
+        <strong id="rodape-marca">Viver de Vendas Diretas</strong>
+        Este resultado é uma orientação sobre clareza e posicionamento da sua bio, sem garantia de vendas. Confira sempre as regras da empresa que você representa antes de publicar.
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script>
+/* ==========================================================================
+   CONFIGURAÇÃO: edite somente este bloco
+   ========================================================================== */
+var CONFIG = {
+  // Endereço que recebe os leads (Make, Zapier, ManyChat, Google Apps Script...).
+  // Deixe vazio ("") para o modo de teste: os dados aparecem apenas no console.
+  WEBHOOK_URL: "",
+
+  // Página de vendas do Apareça e Venda
+  SALES_URL: "https://EXEMPLO.com/apareca-e-venda",
+
+  // Página da Análise Completa
+  ANALISE_URL: "https://EXEMPLO.com/analise-completa",
+
+  // Link do PDF com os 3 modelos de bio
+  PDF_URL: "https://EXEMPLO.com/3-modelos-de-bio.pdf",
+
+  // Página da política de privacidade
+  PRIVACY_URL: "https://EXEMPLO.com/politica-de-privacidade",
+
+  // ID do Pixel da Meta (somente números). Vazio = Pixel não é carregado.
+  FACEBOOK_PIXEL_ID: "",
+
+  // Nome exibido no topo e no rodapé
+  NOME_MARCA: "Viver de Vendas Diretas"
+};
+/* ========================================================================== */
+
+(function () {
+  "use strict";
+
+  var PREFIXO_LOG = "[Quiz Bio]";
+
+  // Perguntas: 1 ponto por "Sim". A dica aparece no resultado quando a resposta foi "Não".
+  var PERGUNTAS = [
+    { texto: 'Minha bio diz para quem eu ajudo?',
+      dica: 'Comece com a cliente: "Ajudo mulheres que querem..." Quem se vê na primeira linha continua lendo.' },
+    { texto: 'Ela mostra a transformação que a cliente vive, e não só o que eu vendo?',
+      dica: 'Cliente compra o resultado, não o frasco. Troque "vendo perfumes" por como a cliente se sente.' },
+    { texto: 'Evito frases batidas como "peça pelo direct" ou "cada pedido com carinho"?',
+      dica: 'Frase que todo mundo usa não diferencia ninguém. Diga algo que seja só seu.' },
+    { texto: 'Minha bio vai além de uma lista de marcas?',
+      dica: 'Lista de marcas parece catálogo. Fale de você e do que você entrega.' },
+    { texto: 'Tem uma chamada clara para a pessoa fazer algo?',
+      dica: 'Diga o próximo passo: "👇 Fale comigo" ou "👇 Veja meu método".' },
+    { texto: 'O link da bio funciona e está claro?',
+      dica: 'Link quebrado ou confuso faz a cliente desistir. Teste e nomeie o botão pelo que ela ganha.' },
+    { texto: 'Meu @ é limpo, sem números e underlines aleatórios?',
+      dica: 'Se ninguém consegue repetir o seu @ de cabeça, ele atrapalha. Simplifique.' },
+    { texto: 'A foto de perfil é minha, com rosto visível e boa luz?',
+      dica: 'Gente compra de gente. Use uma foto sua, bem iluminada, e não uma logomarca.' },
+    { texto: 'Tem algum sinal de confiança, como tempo de experiência ou especialidade?',
+      dica: 'Um dado real ajuda, como "+X anos em vendas". Sem exagero e sem promessa de ganho.' },
+    { texto: 'Quem nunca me viu entende em 5 segundos o que eu faço?',
+      dica: 'Peça a uma amiga para ler a bio por 5 segundos e contar o que entendeu. Se errar, reescreva.' }
+  ];
+
+  var FAIXAS = [
+    { min: 0, max: 3, titulo: 'Perfil vitrine em risco',
+      mensagem: 'Hoje a sua bio mostra produto, mas ainda não diz para quem você fala nem o que a cliente ganha. A boa notícia: é a parte mais rápida de consertar. Comece pelas primeiras dicas abaixo.' },
+    { min: 4, max: 7, titulo: 'Bio no meio do caminho',
+      mensagem: 'Você já acerta em partes, mas ainda deixa a cliente com dúvida. Ajustando os pontos marcados, a sua bio passa a falar com a pessoa certa.' },
+    { min: 8, max: 10, titulo: 'Bio quase pronta',
+      mensagem: 'Parabéns, a base está forte. O próximo passo é lembrar que a bio sozinha não faz todo o trabalho: o conteúdo precisa sustentar o que ela promete.' }
+  ];
+
+  /* ---------- Regras de pontuação ---------- */
+  function calcularNota(respostas) {
+    return respostas.filter(function (r) { return r === true; }).length;
+  }
+  function faixaPorNota(nota) {
+    for (var i = 0; i < FAIXAS.length; i++) {
+      if (nota >= FAIXAS[i].min && nota <= FAIXAS[i].max) return FAIXAS[i];
+    }
+    return FAIXAS[0];
+  }
+
+  /* ---------- Estado ---------- */
+  var estado = {
+    atual: 0,
+    respostas: new Array(PERGUNTAS.length).fill(null),
+    enviando: false,
+    leadRegistrado: false
+  };
+
+  /* ---------- Atalhos ---------- */
+  function $(id) { return document.getElementById(id); }
+  var telas = ['tela-inicio', 'tela-pergunta', 'tela-captura', 'tela-resultado'];
+
+  function avisar(texto) {
+    var a = $('aviso');
+    a.textContent = '';
+    setTimeout(function () { a.textContent = texto; }, 50);
+  }
+
+  function mostrarTela(id, focoId) {
+    telas.forEach(function (t) {
+      var el = $(t);
+      if (t === id) {
+        el.hidden = false;
+        el.classList.remove('entrando');
+        void el.offsetWidth; // reinicia a animação
+        el.classList.add('entrando');
+      } else {
+        el.hidden = true;
+      }
+    });
+    $('progresso').hidden = (id !== 'tela-pergunta');
+    try { window.scrollTo(0, 0); } catch (e) {}
+    if (focoId) {
+      setTimeout(function () {
+        try { $(focoId).focus({ preventScroll: true }); } catch (e) { $(focoId).focus(); }
+      }, 30);
+    }
+  }
+
+  /* ---------- Rastreamento (Pixel da Meta + console) ---------- */
+  function carregarPixel(id) {
+    /* Código padrão do Pixel da Meta */
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', id);
+  }
+
+  function rastrear(evento, dados) {
+    console.info(PREFIXO_LOG + ' evento: ' + evento, dados || '');
+    if (CONFIG.FACEBOOK_PIXEL_ID && typeof window.fbq === 'function') {
+      try { window.fbq('track', evento, dados || {}); } catch (e) {}
+    }
+  }
+
+  /* ---------- Perguntas ---------- */
+  function renderPergunta() {
+    var i = estado.atual;
+    var total = PERGUNTAS.length;
+    var rotulo = 'Pergunta ' + (i + 1) + ' de ' + total;
+
+    $('pergunta-numero').textContent = 'Pergunta ' + (i + 1);
+    $('pergunta-texto').textContent = PERGUNTAS[i].texto;
+    $('progresso-texto').textContent = rotulo;
+    $('progresso-barra').style.width = ((i + 1) / total * 100) + '%';
+    var trilho = $('progresso-trilho');
+    trilho.setAttribute('aria-valuenow', String(i + 1));
+    trilho.setAttribute('aria-valuetext', rotulo);
+
+    var r = estado.respostas[i];
+    $('btn-sim').setAttribute('aria-pressed', r === true ? 'true' : 'false');
+    $('btn-nao').setAttribute('aria-pressed', r === false ? 'true' : 'false');
+    $('btn-sim').setAttribute('aria-label', 'Sim: ' + PERGUNTAS[i].texto);
+    $('btn-nao').setAttribute('aria-label', 'Não: ' + PERGUNTAS[i].texto);
+
+    mostrarTela('tela-pergunta', 'pergunta-texto');
+    avisar(rotulo);
+  }
+
+  function responder(valor) {
+    estado.respostas[estado.atual] = valor;
+    if (estado.atual < PERGUNTAS.length - 1) {
+      estado.atual++;
+      renderPergunta();
+    } else {
+      irParaCaptura();
+    }
+  }
+
+  function voltar() {
+    if (estado.atual > 0) {
+      estado.atual--;
+      renderPergunta();
+    } else {
+      mostrarTela('tela-inicio', 'titulo-inicio');
+    }
+  }
+
+  /* ---------- Captura ---------- */
+  function irParaCaptura() {
+    var nota = calcularNota(estado.respostas);
+    $('nota-previa').textContent = 'Sua nota: ' + nota + ' de 10';
+    mostrarTela('tela-captura', 'titulo-captura');
+  }
+
+  // Remove tudo que não é número e o 55 inicial quando a pessoa digita com código do país
+  function digitosWhats(valor) {
+    var d = String(valor || '').replace(/\D/g, '');
+    if (d.length > 11 && d.indexOf('55') === 0) d = d.slice(2);
+    return d.slice(0, 11);
+  }
+
+  // Máscara brasileira: (11) 1234-5678 ou (11) 91234-5678
+  function mascararWhats(valor) {
+    var d = digitosWhats(valor);
+    if (d.length === 0) return '';
+    if (d.length <= 2) return '(' + d;
+    if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+    if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+    return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+  }
+
+  function emailValido(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
+
+  function marcarErro(campoId, erroId, mensagem) {
+    var campo = $(campoId);
+    $(erroId).textContent = mensagem || '';
+    if (mensagem) campo.setAttribute('aria-invalid', 'true');
+    else campo.removeAttribute('aria-invalid');
+    return !mensagem;
+  }
+
+  function validarFormulario() {
+    var nome = $('campo-nome').value.trim();
+    var whats = digitosWhats($('campo-whatsapp').value);
+    var email = $('campo-email').value.trim();
+    var aceite = $('campo-consentimento').checked;
+    var primeiroInvalido = null;
+
+    var erroNome = '';
+    if (!nome) erroNome = 'Me conta o seu nome para eu saber com quem estou falando.';
+    else if (nome.length < 2) erroNome = 'Digite o seu nome completo ou como gosta de ser chamada.';
+    if (!marcarErro('campo-nome', 'erro-nome', erroNome)) primeiroInvalido = primeiroInvalido || 'campo-nome';
+
+    var erroWhats = '';
+    if (!whats) erroWhats = 'Informe o seu WhatsApp com DDD.';
+    else if (whats.length < 10 || whats.length > 11) erroWhats = 'O WhatsApp precisa ter DDD e número, com 10 ou 11 dígitos. Exemplo: (11) 91234-5678.';
+    else if (whats.charAt(0) === '0') erroWhats = 'O DDD não começa com zero. Exemplo: (11) 91234-5678.';
+    if (!marcarErro('campo-whatsapp', 'erro-whatsapp', erroWhats)) primeiroInvalido = primeiroInvalido || 'campo-whatsapp';
+
+    var erroEmail = '';
+    if (!email) erroEmail = 'Informe o seu e-mail.';
+    else if (!emailValido(email)) erroEmail = 'Esse e-mail parece incompleto. Confira se tem @ e o final, como voce@email.com.';
+    if (!marcarErro('campo-email', 'erro-email', erroEmail)) primeiroInvalido = primeiroInvalido || 'campo-email';
+
+    var erroAceite = aceite ? '' : 'Para liberar o diagnóstico, marque a caixa de consentimento.';
+    if (!marcarErro('campo-consentimento', 'erro-consentimento', erroAceite)) primeiroInvalido = primeiroInvalido || 'campo-consentimento';
+
+    if (primeiroInvalido) {
+      $(primeiroInvalido).focus();
+      return null;
+    }
+    return { nome: nome, whatsapp: whats, email: email };
+  }
+
+  function lerUTMs() {
+    var utms = {};
+    try {
+      var params = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        var v = params.get(k);
+        if (v) utms[k] = v;
+      });
+    } catch (e) {}
+    return utms;
+  }
+
+  function montarPayload(dados) {
+    var nota = calcularNota(estado.respostas);
+    var payload = {
+      nome: dados.nome,
+      whatsapp: '55' + dados.whatsapp,
+      email: dados.email,
+      nota: nota,
+      faixa: faixaPorNota(nota).titulo,
+      respostas: estado.respostas.map(function (r) { return r === true; }),
+      consentimento: true,
+      data_hora: new Date().toISOString(),
+      pagina: window.location.href
+    };
+    var utms = lerUTMs();
+    Object.keys(utms).forEach(function (k) { payload[k] = utms[k]; });
+    return payload;
+  }
+
+  /* ---------- Envio para o WEBHOOK_URL ---------- */
+  function enviarLead(payload) {
+    if (!CONFIG.WEBHOOK_URL) {
+      console.info(PREFIXO_LOG + ' Modo de teste: WEBHOOK_URL vazio. Dados que seriam enviados:', payload);
+      return Promise.resolve({ teste: true });
+    }
+    // Google Apps Script não aceita a verificação prévia (CORS) de application/json.
+    // Para ele, o JSON vai como text/plain e o script lê e.postData.contents normalmente.
+    var ehAppsScript = /script\.google(usercontent)?\.com/.test(CONFIG.WEBHOOK_URL);
+    var controle = ('AbortController' in window) ? new AbortController() : null;
+    var limite = setTimeout(function () { if (controle) controle.abort(); }, 8000);
+
+    return fetch(CONFIG.WEBHOOK_URL, {
+      method: 'POST',
+      mode: ehAppsScript ? 'no-cors' : 'cors',
+      headers: { 'Content-Type': ehAppsScript ? 'text/plain;charset=utf-8' : 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true,
+      signal: controle ? controle.signal : undefined
+    }).then(function (resp) {
+      clearTimeout(limite);
+      // Em no-cors a resposta é opaca (status 0): consideramos entregue
+      if (resp.type !== 'opaque' && !resp.ok) throw new Error('HTTP ' + resp.status);
+      return resp;
+    }, function (erro) {
+      clearTimeout(limite);
+      throw erro;
+    });
+  }
+
+  function registrarLeadOk() {
+    if (estado.leadRegistrado) return;
+    estado.leadRegistrado = true;
+    rastrear('Lead', { content_name: 'Quiz da Bio' });
+  }
+
+  function aoEnviar(evento) {
+    evento.preventDefault();
+    if (estado.enviando) return;
+
+    var dados = validarFormulario();
+    if (!dados) {
+      avisar('Confira os campos marcados antes de continuar.');
+      return;
+    }
+
+    estado.enviando = true;
+    var botao = $('btn-enviar');
+    botao.disabled = true;
+    botao.setAttribute('aria-busy', 'true');
+    botao.textContent = 'Liberando seu diagnóstico...';
+
+    var payload = montarPayload(dados);
+
+    // Mostra o resultado assim que o envio termina, ou após 3s no máximo
+    var resultadoVisivel = false;
+    function liberarResultado() {
+      if (resultadoVisivel) return;
+      resultadoVisivel = true;
+      mostrarResultado(dados.nome);
+    }
+    setTimeout(liberarResultado, 3000);
+
+    enviarLead(payload).then(function () {
+      console.info(PREFIXO_LOG + ' Lead enviado com sucesso.');
+      registrarLeadOk();
+    }).catch(function (erro) {
+      // Não bloqueia: mostra o resultado e tenta mais uma vez em segundo plano
+      console.warn(PREFIXO_LOG + ' Falha no envio, nova tentativa em 4s.', erro && erro.message);
+      setTimeout(function () {
+        enviarLead(payload).then(function () {
+          console.info(PREFIXO_LOG + ' Lead enviado na segunda tentativa.');
+          registrarLeadOk();
+        }).catch(function (erro2) {
+          console.warn(PREFIXO_LOG + ' Segunda tentativa também falhou.', erro2 && erro2.message);
+        });
+      }, 4000);
+    }).then(liberarResultado);
+  }
+
+  /* ---------- Resultado ---------- */
+  function mostrarResultado(nome) {
+    var nota = calcularNota(estado.respostas);
+    var faixa = faixaPorNota(nota);
+    var primeiroNome = String(nome || '').split(' ')[0];
+
+    $('saudacao').textContent = primeiroNome ? 'Seu diagnóstico, ' + primeiroNome : 'Seu diagnóstico';
+    $('nota-num').textContent = String(nota);
+    $('nota-grande').setAttribute('aria-label', 'Sua nota: ' + nota + ' de 10');
+    $('faixa-titulo').textContent = faixa.titulo;
+    $('faixa-mensagem').textContent = faixa.mensagem;
+
+    var lista = $('lista-dicas');
+    lista.innerHTML = '';
+    estado.respostas.forEach(function (r, i) {
+      if (r === true) return;
+      var li = document.createElement('li');
+      var q = document.createElement('span');
+      q.className = 'dica-pergunta';
+      q.textContent = (i + 1) + '. ' + PERGUNTAS[i].texto;
+      var p = document.createElement('p');
+      p.className = 'dica-texto';
+      p.textContent = PERGUNTAS[i].dica;
+      li.appendChild(q);
+      li.appendChild(p);
+      lista.appendChild(li);
+    });
+    var perfeito = (nota === PERGUNTAS.length);
+    lista.hidden = perfeito;
+    $('parabens').hidden = !perfeito;
+
+    mostrarTela('tela-resultado', 'faixa-titulo');
+  }
+
+  /* ---------- Início ---------- */
+  function iniciar() {
+    $('marca').textContent = CONFIG.NOME_MARCA;
+    $('rodape-marca').textContent = CONFIG.NOME_MARCA;
+    $('link-privacidade').href = CONFIG.PRIVACY_URL;
+    $('link-pdf').href = CONFIG.PDF_URL;
+    $('link-vendas').href = CONFIG.SALES_URL;
+    $('link-analise').href = CONFIG.ANALISE_URL;
+
+    if (CONFIG.FACEBOOK_PIXEL_ID) {
+      carregarPixel(CONFIG.FACEBOOK_PIXEL_ID);
+    } else {
+      console.info(PREFIXO_LOG + ' FACEBOOK_PIXEL_ID vazio: Pixel não carregado (eventos só no console).');
+    }
+    rastrear('PageView');
+
+    $('btn-comecar').addEventListener('click', function () {
+      estado.atual = 0;
+      rastrear('ViewContent', { content_name: 'Quiz da Bio' });
+      renderPergunta();
+    });
+    $('btn-sim').addEventListener('click', function () { responder(true); });
+    $('btn-nao').addEventListener('click', function () { responder(false); });
+    $('btn-voltar').addEventListener('click', voltar);
+    $('btn-voltar-captura').addEventListener('click', function () {
+      estado.atual = PERGUNTAS.length - 1;
+      renderPergunta();
+    });
+
+    var whats = $('campo-whatsapp');
+    whats.addEventListener('input', function () { whats.value = mascararWhats(whats.value); });
+
+    // Limpa o erro do campo assim que a pessoa corrige
+    ['campo-nome', 'campo-whatsapp', 'campo-email'].forEach(function (id) {
+      $(id).addEventListener('input', function () {
+        if ($(id).getAttribute('aria-invalid') === 'true') marcarErro(id, id.replace('campo-', 'erro-'), '');
+      });
+    });
+    $('campo-consentimento').addEventListener('change', function () {
+      if (this.checked) marcarErro('campo-consentimento', 'erro-consentimento', '');
+    });
+
+    $('form-captura').addEventListener('submit', aoEnviar);
+  }
+
+  // Exposto apenas para testes automatizados
+  window.__quizBio = { calcularNota: calcularNota, faixaPorNota: faixaPorNota, PERGUNTAS: PERGUNTAS };
+
+  iniciar();
+})();
+</script>
+</body>
+</html>
