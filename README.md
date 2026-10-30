@@ -1,8 +1,8 @@
-# Quiz da Bio | Viver de Vendas Diretas
+# Quiz do Instagram | Viver de Vendas Diretas
 
 Quiz de captura de leads em um único arquivo (`index.html`). Sem frameworks, sem backend, sem IA. Só usa as fontes do Google Fonts.
 
-Fluxo: tela inicial, 10 perguntas de Sim ou Não, captura (nome, WhatsApp, e-mail e consentimento), resultado com nota, dicas, PDF e ofertas.
+Fluxo: tela inicial, 10 perguntas de Sim ou Não sobre o perfil (cada uma com um exemplo), captura (nome, WhatsApp, e-mail e consentimento), resultado com nota, dicas, PDF e ofertas.
 
 ## 1. Editar o CONFIG
 
@@ -52,7 +52,7 @@ O quiz faz um `POST` em JSON com:
 ```json
 {
   "nome": "Maria", "whatsapp": "5511912345678", "email": "maria@email.com",
-  "nota": 6, "faixa": "Bio no meio do caminho",
+  "nota": 6, "faixa": "Perfil no meio do caminho",
   "respostas": [true, false, true, true, false, true, true, false, true, true],
   "consentimento": true, "data_hora": "2026-10-29T12:00:00.000Z",
   "pagina": "https://...", "utm_source": "instagram"
@@ -101,3 +101,7 @@ Observação: para URLs do Google Apps Script o quiz envia o JSON como `text/pla
 5. Com o ID vazio nada é carregado; os eventos aparecem só no console como `[Quiz Bio] evento: ...`.
 
 O evento **Lead** dispara quando o envio é confirmado (ou no modo de teste). Se a primeira tentativa falhar e a segunda der certo, ele dispara na segunda.
+
+## Editar perguntas
+
+No script, a lista `PERGUNTAS` tem, para cada pergunta: `texto`, `exemplo` (aparece embaixo da pergunta) e `dica` (aparece no resultado só quando a resposta foi Não). Cada "Sim" vale 1 ponto. Escreva sempre a pergunta de forma que **Sim seja o lado bom**. As faixas ficam em `FAIXAS`.

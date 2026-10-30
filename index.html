@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sua bio atrai ou afasta cliente? | Viver de Vendas Diretas</title>
-<meta name="description" content="Responda 10 perguntas rápidas, descubra a nota da sua bio do Instagram e receba 3 modelos prontos para reescrever a sua bio hoje.">
+<title>Seu Instagram atrai ou afasta cliente? | Viver de Vendas Diretas</title>
+<meta name="description" content="Responda 10 perguntas rápidas, descubra a nota do seu perfil no Instagram e receba 3 modelos prontos para reescrever a sua bio hoje.">
 <meta name="theme-color" content="#5B2A4E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -240,6 +240,16 @@
     color: var(--branco);
     border-color: var(--ameixa);
   }
+  .exemplo {
+    margin: 4px 0 0;
+    background: var(--creme);
+    border-left: 4px solid var(--dourado);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 16px;
+    color: var(--tinta);
+  }
+  .exemplo-rotulo { font-weight: 700; color: var(--ameixa); }
   .acoes-pergunta { margin-top: 14px; display: flex; justify-content: flex-start; }
 
   /* Formulário */
@@ -432,11 +442,11 @@
     <!-- 1. Tela inicial -->
     <section class="tela" id="tela-inicio" aria-labelledby="titulo-inicio">
       <div class="cartao">
-        <span class="selo">Quiz da bio · 2 minutos</span>
-        <h1 id="titulo-inicio" tabindex="-1">Sua bio atrai ou afasta cliente?</h1>
+        <span class="selo">Diagnóstico do Instagram · 2 minutos</span>
+        <h1 id="titulo-inicio" tabindex="-1">Seu Instagram atrai ou afasta cliente?</h1>
         <div class="enfeite" aria-hidden="true"></div>
         <p>Em 2 minutos você descobre sua nota de 0 a 10 e recebe 3 modelos prontos para reescrever a sua bio hoje.</p>
-        <p class="texto-menor">Abra o seu Instagram em outra aba, olhe a sua bio e responda com sinceridade, guria. Aqui ninguém te julga.</p>
+        <p class="texto-menor">Abra o seu Instagram em outra aba, olhe o seu perfil e responda com sinceridade, guria. Aqui ninguém te julga.</p>
         <button type="button" class="btn btn-principal" id="btn-comecar" aria-label="Começar o quiz">Começar</button>
       </div>
     </section>
@@ -446,7 +456,8 @@
       <div class="cartao">
         <div class="pergunta-numero" id="pergunta-numero">Pergunta 1</div>
         <h2 id="pergunta-texto" tabindex="-1"></h2>
-        <div class="respostas" role="group" aria-labelledby="pergunta-texto">
+        <p class="exemplo" id="pergunta-exemplo"><span class="exemplo-rotulo">Exemplo:</span> <span id="pergunta-exemplo-texto"></span></p>
+        <div class="respostas" role="group" aria-labelledby="pergunta-texto" aria-describedby="pergunta-exemplo">
           <button type="button" class="btn btn-resposta" id="btn-sim" aria-pressed="false">Sim</button>
           <button type="button" class="btn btn-resposta" id="btn-nao" aria-pressed="false">Não</button>
         </div>
@@ -524,7 +535,7 @@
           <ol class="lista-dicas" id="lista-dicas"></ol>
           <div class="parabens" id="parabens" hidden>
             <p><strong>Você marcou Sim nas 10 perguntas!</strong></p>
-            <p style="margin:0">Que orgulho de ver isso. A sua bio já cumpre todos os pontos do diagnóstico. Agora é manter o conteúdo alinhado com o que ela mostra.</p>
+            <p style="margin:0">Que orgulho de ver isso. O seu perfil já cumpre todos os pontos do diagnóstico. Agora é manter a constância e seguir aparecendo.</p>
           </div>
         </div>
 
@@ -547,7 +558,7 @@
 
       <footer class="rodape">
         <strong id="rodape-marca">Viver de Vendas Diretas</strong>
-        Este resultado é uma orientação sobre clareza e posicionamento da sua bio, sem garantia de vendas. Confira sempre as regras da empresa que você representa antes de publicar.
+        Este resultado é uma orientação sobre clareza e posicionamento do seu perfil, sem garantia de vendas. Confira sempre as regras da empresa que você representa antes de publicar.
       </footer>
     </section>
   </main>
@@ -588,36 +599,48 @@ var CONFIG = {
   var PREFIXO_LOG = "[Quiz Bio]";
 
   // Perguntas: 1 ponto por "Sim". A dica aparece no resultado quando a resposta foi "Não".
+  // Cada pergunta: texto (bem simples), exemplo (aparece embaixo da pergunta)
+  // e dica (aparece no resultado somente quando a resposta foi "Não").
   var PERGUNTAS = [
-    { texto: 'Minha bio diz para quem eu ajudo?',
-      dica: 'Comece com a cliente: "Ajudo mulheres que querem..." Quem se vê na primeira linha continua lendo.' },
-    { texto: 'Ela mostra a transformação que a cliente vive, e não só o que eu vendo?',
-      dica: 'Cliente compra o resultado, não o frasco. Troque "vendo perfumes" por como a cliente se sente.' },
-    { texto: 'Evito frases batidas como "peça pelo direct" ou "cada pedido com carinho"?',
-      dica: 'Frase que todo mundo usa não diferencia ninguém. Diga algo que seja só seu.' },
-    { texto: 'Minha bio vai além de uma lista de marcas?',
-      dica: 'Lista de marcas parece catálogo. Fale de você e do que você entrega.' },
-    { texto: 'Tem uma chamada clara para a pessoa fazer algo?',
-      dica: 'Diga o próximo passo: "👇 Fale comigo" ou "👇 Veja meu método".' },
-    { texto: 'O link da bio funciona e está claro?',
-      dica: 'Link quebrado ou confuso faz a cliente desistir. Teste e nomeie o botão pelo que ela ganha.' },
-    { texto: 'Meu @ é limpo, sem números e underlines aleatórios?',
-      dica: 'Se ninguém consegue repetir o seu @ de cabeça, ele atrapalha. Simplifique.' },
-    { texto: 'A foto de perfil é minha, com rosto visível e boa luz?',
-      dica: 'Gente compra de gente. Use uma foto sua, bem iluminada, e não uma logomarca.' },
-    { texto: 'Tem algum sinal de confiança, como tempo de experiência ou especialidade?',
-      dica: 'Um dado real ajuda, como "+X anos em vendas". Sem exagero e sem promessa de ganho.' },
-    { texto: 'Quem nunca me viu entende em 5 segundos o que eu faço?',
-      dica: 'Peça a uma amiga para ler a bio por 5 segundos e contar o que entendeu. Se errar, reescreva.' }
+    { texto: 'Quem entra no seu perfil entende rapidinho que você vende produtos de beleza?',
+      exemplo: 'Embaixo do seu nome está escrito algo como "Consultora de beleza. Te ajudo a escolher o perfume certo".',
+      dica: 'Escreva na bio, em uma frase simples, o que você vende e para quem. Exemplo: "Te ajudo a achar a maquiagem certa para o dia a dia."' },
+    { texto: 'A sua foto de perfil mostra o seu rosto?',
+      exemplo: 'Uma foto sua, de perto, com boa luz. Logo da marca ou foto de produto não vale.',
+      dica: 'Gente compra de gente. Troque por uma foto sua, de perto, perto de uma janela para pegar luz boa.' },
+    { texto: 'Tem um link no seu perfil que leva a cliente direto para o seu WhatsApp ou para onde ela pode comprar?',
+      exemplo: 'A cliente toca no link e já abre uma conversa com você no WhatsApp, ou a sua loja online.',
+      dica: 'Coloque na bio um link que abre o seu WhatsApp (dá para criar grátis no wa.me). Assim a cliente fala com você em um toque.' },
+    { texto: 'Você tem Destaques organizados no seu perfil?',
+      exemplo: 'São as bolinhas embaixo da bio, com nomes como "Perfumes", "Clientes" e "Como comprar".',
+      dica: 'Crie 3 Destaques para começar: "Quem sou eu", "Produtos" e "Como comprar". Eles ficam fixos como uma vitrine.' },
+    { texto: 'Você posta no feed ou nos Reels pelo menos 3 vezes por semana?',
+      exemplo: 'Uma foto de produto na segunda, uma dica na quarta e um vídeo na sexta já contam.',
+      dica: 'Não precisa postar todo dia. Escolha 3 dias fixos na semana e cumpra. Ser constante vale mais do que postar muito.' },
+    { texto: 'Você aparece nos Stories quase todos os dias?',
+      exemplo: 'Mostrar um pedido chegando, um produto que você está usando ou só dar um bom dia.',
+      dica: 'Nos Stories a cliente vai te conhecendo e confiando. Comece com 3 stories por dia, simples, do seu dia a dia.' },
+    { texto: 'Você já grava vídeos mostrando o seu rosto e falando?',
+      exemplo: 'Um vídeo de 15 segundos contando qual é o seu perfume preferido. Vale nos Stories ou nos Reels.',
+      dica: 'A vergonha passa com prática. Grave alguns vídeos curtos só para você, sem postar. Quando ficar mais à vontade, poste um.' },
+    { texto: 'Os seus posts mostram o que o produto faz pela cliente, e não só a foto e o preço?',
+      exemplo: 'Em vez de "Perfume X, R$ 89", algo como "o perfume que dura o dia inteiro no trabalho".',
+      dica: 'A cliente compra o que o produto faz por ela. Conte como ela vai se sentir usando, não só o nome e o preço.' },
+    { texto: 'Você mostra no perfil o que as clientes acham dos seus produtos?',
+      exemplo: 'Print de uma mensagem de cliente elogiando, ou foto dela usando o produto (com a permissão dela).',
+      dica: 'Peça para 3 clientes mandarem um áudio ou uma mensagem contando o que acharam. Guarde tudo em um Destaque "Clientes".' },
+    { texto: 'Nas últimas semanas, alguém te chamou no direct ou no WhatsApp perguntando de produto por causa do Instagram?',
+      exemplo: 'Uma mensagem tipo "oi, quanto custa aquele batom do seu post?".',
+      dica: 'Convide a cliente a falar com você. No fim do post, escreva algo como "me chama no direct com a palavra BATOM que eu te mostro as cores".' }
   ];
 
   var FAIXAS = [
     { min: 0, max: 3, titulo: 'Perfil vitrine em risco',
-      mensagem: 'Hoje a sua bio mostra produto, mas ainda não diz para quem você fala nem o que a cliente ganha. A boa notícia: é a parte mais rápida de consertar. Comece pelas primeiras dicas abaixo.' },
-    { min: 4, max: 7, titulo: 'Bio no meio do caminho',
-      mensagem: 'Você já acerta em partes, mas ainda deixa a cliente com dúvida. Ajustando os pontos marcados, a sua bio passa a falar com a pessoa certa.' },
-    { min: 8, max: 10, titulo: 'Bio quase pronta',
-      mensagem: 'Parabéns, a base está forte. O próximo passo é lembrar que a bio sozinha não faz todo o trabalho: o conteúdo precisa sustentar o que ela promete.' }
+      mensagem: 'Hoje o seu Instagram mostra produto, mas ainda não ajuda a cliente a confiar em você nem a saber como te chamar. A boa notícia: dá para arrumar aos poucos, um passo de cada vez. Comece pelas primeiras dicas abaixo.' },
+    { min: 4, max: 7, titulo: 'Perfil no meio do caminho',
+      mensagem: 'Você já acerta em partes, mas a cliente ainda pode ficar com dúvida ou sem saber como falar com você. Ajustando os pontos marcados, o seu perfil passa a falar com a pessoa certa.' },
+    { min: 8, max: 10, titulo: 'Perfil quase pronto',
+      mensagem: 'Parabéns, a base está forte. O próximo passo é manter a constância e aparecer cada vez mais em vídeo: é isso que sustenta o que o seu perfil promete.' }
   ];
 
   /* ---------- Regras de pontuação ---------- */
@@ -700,6 +723,7 @@ var CONFIG = {
 
     $('pergunta-numero').textContent = 'Pergunta ' + (i + 1);
     $('pergunta-texto').textContent = PERGUNTAS[i].texto;
+    $('pergunta-exemplo-texto').textContent = PERGUNTAS[i].exemplo;
     $('progresso-texto').textContent = rotulo;
     $('progresso-barra').style.width = ((i + 1) / total * 100) + '%';
     var trilho = $('progresso-trilho');
@@ -867,7 +891,7 @@ var CONFIG = {
   function registrarLeadOk() {
     if (estado.leadRegistrado) return;
     estado.leadRegistrado = true;
-    rastrear('Lead', { content_name: 'Quiz da Bio' });
+    rastrear('Lead', { content_name: 'Quiz do Instagram' });
   }
 
   function aoEnviar(evento) {
@@ -966,7 +990,7 @@ var CONFIG = {
 
     $('btn-comecar').addEventListener('click', function () {
       estado.atual = 0;
-      rastrear('ViewContent', { content_name: 'Quiz da Bio' });
+      rastrear('ViewContent', { content_name: 'Quiz do Instagram' });
       renderPergunta();
     });
     $('btn-sim').addEventListener('click', function () { responder(true); });
